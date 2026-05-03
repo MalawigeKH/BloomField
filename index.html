@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Bloom Field — Peaceful Garden</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stats-bar">
+        <div class="stat">💰 <span id="coinAmount">200</span></div>
+        <div class="stat">🌰 <span id="seedCount">5</span></div>
+        <div class="stat">🌱 <span id="seedlingCount">0</span></div>
+        <div class="stat">🌿 <span id="budCount">0</span></div>
+        <div class="stat">🌸 <span id="flowerCount">0</span></div>
+        <div class="stat">🦋 <span id="butterflyCount">0</span></div>
+        <div class="stat">🪨 <span id="stoneCount">0</span></div>
+    </div>
+    
+    <div class="shop-panel">
+        <button class="shop-btn" id="sellAllBtn">💐 Sell All Blooms</button>
+        <button class="shop-btn" id="buySeedBtn">🌻 Buy Seed</button>
+        <button class="shop-btn plant-btn" id="plantSeedBtn">🌱 PLANT SEED</button>
+        <button class="shop-btn butterfly-btn" id="buyButterflyBtn">🦋 Buy & Release 80💰</button>
+        <button class="shop-btn stone-btn" id="buyStoneBtn">🪨 Buy Stone (<span id="stonePrice">25</span>💰)</button>
+        <div class="stone-throw-btn" id="throwStoneBtn">🪨</div>
+    </div>
+    
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-container">
+            <h3>🌱 Buy Seeds</h3>
+            <div class="popup-buttons">
+                <div class="quantity-selector">
+                    <button class="quantity-btn" id="minusQuantity">-</button>
+                    <span class="quantity-value" id="quantityValue">1</span>
+                    <button class="quantity-btn" id="plusQuantity">+</button>
+                </div>
+                <button class="popup-btn" id="buyQuantityBtn">Buy <span id="quantityAmount">1</span> Seeds (<span id="quantityPrice">25</span>💰)</button>
+                <button class="popup-btn max-buy-btn" id="buyMaxBtn">Buy As Many As Possible</button>
+                <button class="popup-btn close-popup" id="closePopupBtn">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="weather-indicator" id="weatherIndicator">☀️ Sunny Day</div>
+    <div class="crow-warning" id="crowWarning" style="display: none;">⚠️ CROW! Click stone button to aim! ⚠️</div>
+    <div class="message-area" id="gameMessage"></div>
+    
+    <div class="gun-crosshair" id="gunCrosshair"></div>
+    <div class="gun-crosshair-ring" id="gunCrosshairRing"></div>
+    <div class="aim-instruction" id="aimInstruction">🎯 MOVE MOUSE to AIM | CLICK to SHOOT 🎯</div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
